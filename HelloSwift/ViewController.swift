@@ -12,6 +12,15 @@ class ViewController: UIViewController {
     
     //Explicit
     var titleString: String = "Mastor klod"
+    let current:String = "This is Label"
+    let currentButton:String = "Change"
+    let backButton:String="Back"
+    
+    var status:Bool = false
+    
+    
+    
+    @IBOutlet weak var changeOutlet: UIButton!
     
     
     
@@ -19,9 +28,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBAction func changeButton(_ sender: Any) {
+        
         print("You Click ChangeButton")
         
-        titleLabel.text = titleString
+        status = !status
+        
+        if status {
+            titleLabel.text=titleString
+        }else{
+            titleLabel.text=current
+        }
+        
+        
+//        titleLabel.text = titleString
+        
         
         
     }//change Button Funtion
